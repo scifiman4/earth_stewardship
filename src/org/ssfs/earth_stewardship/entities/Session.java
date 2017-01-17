@@ -6,8 +6,7 @@ package org.ssfs.earth_stewardship.entities;
 
 /**
  * @author denabma
- *
  */
-public class Session {
+public class Session extends BaseEntity {
 
 }

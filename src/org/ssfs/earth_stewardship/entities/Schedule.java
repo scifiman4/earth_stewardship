@@ -7,7 +7,7 @@ package org.ssfs.earth_stewardship.entities;
 /**
  * @author denabma
  */
-public class Schedule {
+public class Schedule extends BaseEntity {
 
 	Schedule(Schedule orig) {
 		// TODO create copy constructor

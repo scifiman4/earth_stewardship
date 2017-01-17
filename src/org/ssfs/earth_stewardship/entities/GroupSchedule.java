@@ -7,13 +7,13 @@ package org.ssfs.earth_stewardship.entities;
 /**
  * @author denabma
  */
-public class Schedule extends BaseEntity {
+public class GroupSchedule extends BaseEntity {
 
-	Schedule(Schedule orig) {
+	GroupSchedule(GroupSchedule orig) {
 		// TODO create copy constructor
 	}
 
-	public Schedule() {
+	public GroupSchedule() {
 		// TODO complete constructor
 	}
 

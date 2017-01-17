@@ -11,21 +11,21 @@ package org.ssfs.earth_stewardship.entities;
 public class Group extends BaseEntity {
 
 	private String groupLeader;
-	private final Schedule mySchedule;
+	private final GroupSchedule mySchedule;
 
 	public Group(String leader) {
 		super();
 
 		this.groupLeader = leader;
-		this.mySchedule = new Schedule();
+		this.mySchedule = new GroupSchedule();
 	}
 
 	public String getGroupLeader() {
 		return this.groupLeader;
 	}
 
-	public Schedule getMySchedule() {
-		return new Schedule(mySchedule);
+	public GroupSchedule getMySchedule() {
+		return new GroupSchedule(mySchedule);
 	}
 
 	@Override

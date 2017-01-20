@@ -15,18 +15,19 @@ public class GroupSchedule {
     private int groupId;
     private Map<ScheduleBlock, Session> schedule;
 
-    /**
-     * copy constructor TODO
-     *
-     * @param orig
-     */
-    GroupSchedule(GroupSchedule orig) {
-	// TODO create copy constructor
-    }
-
     public GroupSchedule(int groupId) {
 	this.groupId = groupId;
 	schedule = new HashMap<ScheduleBlock, Session>();
+    }
+
+    /**
+     * copy constructor TODO
+     *
+     * @param original
+     */
+    public GroupSchedule(GroupSchedule original) {
+	groupId = original.groupId;
+	schedule = original.schedule;
     }
 
 }

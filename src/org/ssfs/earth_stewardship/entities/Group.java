@@ -1,6 +1,5 @@
-
 /**
- * 
+ *
  */
 
 package org.ssfs.earth_stewardship.entities;
@@ -10,27 +9,27 @@ package org.ssfs.earth_stewardship.entities;
  */
 public class Group extends BaseEntity {
 
-	private String groupLeader;
-	private final GroupSchedule mySchedule;
+    private String groupLeader;
+    private final GroupSchedule mySchedule;
 
-	public Group(String leader) {
-		super();
+    public Group(String leader) {
+	super();
 
-		this.groupLeader = leader;
-		this.mySchedule = new GroupSchedule();
-	}
+	groupLeader = leader;
+	mySchedule = new GroupSchedule();
+    }
 
-	public String getGroupLeader() {
-		return this.groupLeader;
-	}
+    public String getGroupLeader() {
+	return groupLeader;
+    }
 
-	public GroupSchedule getMySchedule() {
-		return new GroupSchedule(mySchedule);
-	}
+    public GroupSchedule getMySchedule() {
+	return new GroupSchedule(mySchedule);
+    }
 
-	@Override
-	public String toString() {
-		return "Group [groupLeader=" + groupLeader + "]";
-	}
+    @Override
+    public String toString() {
+	return "Group [groupLeader=" + groupLeader + "]";
+    }
 
 }

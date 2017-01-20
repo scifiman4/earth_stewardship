@@ -8,6 +8,6 @@ package org.ssfs.earth_stewardship.entities;
  * @author denabma
  *
  */
-public class Block extends BaseEntity {
+public class ScheduleBlock extends BaseEntity {
 
 }

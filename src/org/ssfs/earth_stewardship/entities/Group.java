@@ -19,7 +19,7 @@ public class Group {
 	groupId = nextGroupId++;
 
 	groupLeader = leader;
-	mySchedule = new GroupSchedule();
+	mySchedule = new GroupSchedule(groupId);
     }
 
     public String getGroupLeader() {

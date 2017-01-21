@@ -13,6 +13,7 @@ import java.util.Map;
 public class GroupSchedule {
 
     private int groupId;
+
     private Map<ScheduleBlock, Session> schedule;
 
     public GroupSchedule(int groupId) {

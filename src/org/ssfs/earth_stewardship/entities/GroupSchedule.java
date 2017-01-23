@@ -44,4 +44,10 @@ public class GroupSchedule {
 	schedule = original.schedule;
     }
 
+    @Override
+    public String toString() {
+	return "GroupSchedule ["
+		+ (schedule != null ? "schedule=" + schedule : "") + "]";
+    }
+
 }

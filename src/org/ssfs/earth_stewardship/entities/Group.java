@@ -38,7 +38,9 @@ public class Group {
 
     @Override
     public String toString() {
-	return "Group [groupLeader=" + groupLeader + "]";
+	return "Group ["
+		+ (groupLeader != null ? "groupLeader=" + groupLeader + ", "
+			: "") + "groupSize=" + groupSize + "]";
     }
 
     @Override
@@ -46,8 +48,6 @@ public class Group {
 	final int prime = 31;
 	int result = 1;
 	result = prime * result + groupId;
-	result = prime * result
-		+ ((groupLeader == null) ? 0 : groupLeader.hashCode());
 	return result;
     }
 
@@ -64,13 +64,6 @@ public class Group {
 	}
 	Group other = (Group) obj;
 	if (groupId != other.groupId) {
-	    return false;
-	}
-	if (groupLeader == null) {
-	    if (other.groupLeader != null) {
-		return false;
-	    }
-	} else if (!groupLeader.equals(other.groupLeader)) {
 	    return false;
 	}
 	return true;

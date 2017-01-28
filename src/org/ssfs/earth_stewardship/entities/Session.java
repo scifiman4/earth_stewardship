@@ -6,8 +6,6 @@ package org.ssfs.earth_stewardship.entities;
 
 /**
  * This is a similar to a Section in a course scheduling situation.
- * 
- * @author denabma
  */
 public class Session {
 

@@ -1,25 +1,38 @@
-/**
- *
- */
-
 package org.ssfs.earth_stewardship.entities;
 
+/**
+ * A {@link Group} is a group of people to be scheduled. <br/>
+ * In this scenario, it's an SSFS Advisory.
+ */
 public class Group {
 
-    private int groupId;
+    /** this {@link Group}'s Advisor */
     private String groupLeader;
+    /** the number of people (advisees) in this {@link Group} */
     private int groupSize;
+
+    /** this advisory's schedule */
     private final GroupSchedule mySchedule;
 
-    private static int nextGroupId = 0;
+    // ===== Constructors =====
 
+    public Group() {
+	mySchedule = new GroupSchedule();
+    }
+
+    /**
+     * @param leader
+     *            the leader (advisor) of this {@link Group}
+     * @param size
+     *            the number of people (advisees) in this {@link Group}
+     */
     public Group(String leader, int size) {
-	groupId = nextGroupId++;
-
+	this();
 	groupLeader = leader;
 	groupSize = size;
-	mySchedule = new GroupSchedule(groupId);
     }
+
+    // ===== accessor methods =====
 
     public String getGroupLeader() {
 	return groupLeader;
@@ -30,8 +43,10 @@ public class Group {
     }
 
     public GroupSchedule getMySchedule() {
-	return new GroupSchedule(mySchedule);
+	return mySchedule;
     }
+
+    // ===== overrides =====
 
     @Override
     public String toString() {
@@ -40,30 +55,6 @@ public class Group {
 			: "") + "groupSize=" + groupSize + "]";
     }
 
-    @Override
-    public int hashCode() {
-	final int prime = 31;
-	int result = 1;
-	result = prime * result + groupId;
-	return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	if (this == obj) {
-	    return true;
-	}
-	if (obj == null) {
-	    return false;
-	}
-	if (getClass() != obj.getClass()) {
-	    return false;
-	}
-	Group other = (Group) obj;
-	if (groupId != other.groupId) {
-	    return false;
-	}
-	return true;
-    }
+    // ===== scheduling methods =====
 
 }

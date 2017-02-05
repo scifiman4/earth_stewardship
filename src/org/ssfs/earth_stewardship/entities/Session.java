@@ -5,7 +5,7 @@ import java.util.Set;
 
 /**
  * This is a similar to a Section in a course scheduling situation. {link
- * Group}s are scheduled into them.
+ * Group}s are scheduledGroups into them.
  */
 public class Session {
 
@@ -16,23 +16,23 @@ public class Session {
     /** the location this {@link Session} meets in */
     private String location;
     /**
-     * the maximum number of people in {@link Group}s that can be scheduled in
-     * this {@link Session}.
+     * the maximum number of people in {@link Group}s that can be
+     * scheduledGroups in this {@link Session}.
      */
     private int maxSize;
 
     // ===== scheduling fields =====
 
-    /** the total number of people in each scheduled {@link Group} */
+    /** the total number of people in each scheduledGroups {@link Group} */
     private int currentSize;
-    /** the {@link Group}s scheduled in this {@link Session} */
-    private Set<Group> scheduled;
+    /** the {@link Group}s scheduledGroups in this {@link Session} */
+    private Set<Group> scheduledGroups;
 
     // ===== Constructors =====
 
     public Session() {
 	currentSize = 0;
-	scheduled = new HashSet<Group>();
+	scheduledGroups = new HashSet<Group>();
     }
 
     /**
@@ -66,7 +66,7 @@ public class Session {
     }
 
     public Set<Group> getScheduledGroups() {
-	return new HashSet<Group>(scheduled);
+	return new HashSet<Group>(scheduledGroups);
     }
 
     // ===== Setter methods =====
@@ -94,9 +94,10 @@ public class Session {
 		+ ", "
 		+ (activityName != null ? "activityName=" + activityName + ", "
 			: "");
-	if (scheduled != null) {
-	    ret += "scheduled:" + (scheduled.size() == 0 ? " None" : "");
-	    for (Group group : scheduled) {
+	if (scheduledGroups != null) {
+	    ret += "scheduledGroups:"
+		    + (scheduledGroups.size() == 0 ? " None" : "");
+	    for (Group group : scheduledGroups) {
 		ret += "\n" + group;
 	    }
 	}
@@ -106,19 +107,20 @@ public class Session {
     // ===== methods for scheduling =====
 
     public void unschedule(Group group) {
-	if (scheduled.remove(group)) {
+	if (scheduledGroups.remove(group)) {
 	    currentSize -= group.getSize();
 	}
     }
 
     public void schedule(Group group) {
-	if (currentSize + group.getSize() <= maxSize && scheduled.add(group)) {
+	if (currentSize + group.getSize() <= maxSize
+		&& scheduledGroups.add(group)) {
 	    currentSize += group.getSize();
 	}
     }
 
     public boolean isScheduled(Group group) {
-	return scheduled.contains(group);
+	return scheduledGroups.contains(group);
     }
 
 }

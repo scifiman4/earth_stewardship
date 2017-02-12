@@ -1,5 +1,8 @@
 package org.ssfs.earth_stewardship.entities;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * A {@link Group} is a group of people to be scheduled. <br/>
  * In this scenario, it's an SSFS Advisory.
@@ -11,13 +14,14 @@ public class Group {
     /** the number of people (advisees) in this {@link Group} */
     private int groupSize;
 
-    /** this advisory's schedule */
-    private final GroupSchedule mySchedule;
+    // ===== scheduling fields =====
+
+    private Map<ScheduleBlock, Session> mySchedule;
 
     // ===== Constructors =====
 
     public Group() {
-	mySchedule = new GroupSchedule();
+	mySchedule = new HashMap<ScheduleBlock, Session>();
     }
 
     /**
@@ -42,7 +46,7 @@ public class Group {
 	return groupSize;
     }
 
-    public GroupSchedule getMySchedule() {
+    public Map<ScheduleBlock, Session> getMySchedule() {
 	return mySchedule;
     }
 

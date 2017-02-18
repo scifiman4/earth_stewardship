@@ -1,7 +1,3 @@
-/**
- *
- */
-
 package org.ssfs.earth_stewardship.entities;
 
 /**
@@ -14,11 +10,11 @@ public class ScheduleBlock {
     /** the order for which to display this {@link ScheduleBlock} in */
     private int blockNumber;
 
-    private static int nextBlockNumber = 0;
+    private static int maxBlockNumber = 0;
 
     public ScheduleBlock(String name) {
 	blockName = name;
-	blockNumber = nextBlockNumber++;
+	blockNumber = maxBlockNumber++;
     }
 
 }

@@ -8,9 +8,13 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public abstract class AbstractSchedule {
 
     public AbstractSchedule copy() {
-	throw new NotImplementedException();
 	// TODO Auto-generated method stub
-	// return null;
+	throw new NotImplementedException();
+    }
+
+    public void createFromTemplate(ScheduleTemplate template) {
+	// TODO Auto-generated method stub
+	throw new NotImplementedException();
     }
 
 }

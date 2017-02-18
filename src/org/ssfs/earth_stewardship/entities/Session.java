@@ -37,9 +37,13 @@ public class Session {
 
     /**
      * @param maxSize
-     *            initial maxSize
+     *            the initial maxSize
      * @param activityName
-     *            initial activityName for the {@link Session}
+     *            the initial {@link Session.activityName activityName} for the
+     *            {@link Session}
+     * @param block
+     *            which part of the schedule this {@link Session} is scheduled
+     *            into.
      */
     public Session(int maxSize, String activityName) {
 	this();

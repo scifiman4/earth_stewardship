@@ -56,7 +56,7 @@ public abstract class AbstractSchedulable {
      * @return the {@link AbstractSchedule} associated with the object.
      */
     public AbstractSchedule getSchedule() {
-	return mySchedule.copy();
+	return mySchedule;
     }
 
     // ===== overriding methods =====

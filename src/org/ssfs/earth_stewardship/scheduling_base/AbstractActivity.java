@@ -1,6 +1,5 @@
 package org.ssfs.earth_stewardship.scheduling_base;
 
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,8 +14,7 @@ import java.util.List;
  * <li>Earth Stewardship Day Session</li>
  * </ul>
  */
-public abstract class AbstractActivity implements
-Comparator<AbstractSchedulable> {
+public class AbstractActivity {
 
     // ===== fields =====
 
@@ -36,12 +34,18 @@ Comparator<AbstractSchedulable> {
      * the location of this {@code AbstractActivity}
      */
     protected String location;
-
+    /**
+     * the aggregate sum of {@link AbstractSchedulable#getSize()}.
+     */
     protected int currentSize;
 
-    protected List<AbstractSchedulable> scheduled;
+    /**
+     * the {@link AbstractSchedulable}s doing this activity.
+     */
+    protected List<AbstractSchedulable> scheduled; // TODO do i need this??
 
     // ===== accessor methods =====
+
     public AbstractActivity() {
 	scheduled = new LinkedList<AbstractSchedulable>();
     }
@@ -116,7 +120,7 @@ Comparator<AbstractSchedulable> {
      *            the item to check if there is space for
      * @return true if this Activity has space for the specifie item
      */
-    public final boolean hasSpaceFor(AbstractSchedulable item) {
+    public boolean hasSpaceFor(AbstractSchedulable item) {
 	return currentSize + item.getSize() <= capacity;
     }
 
@@ -127,7 +131,7 @@ Comparator<AbstractSchedulable> {
      *            the item to check for
      * @return true if this item is scheduled in this Activity.
      */
-    public final boolean isScheduled(AbstractSchedulable item) {
+    public boolean isScheduled(AbstractSchedulable item) {
 	return scheduled.contains(item);
     }
 
@@ -138,7 +142,7 @@ Comparator<AbstractSchedulable> {
      *            the item to schedule
      * @return true if the item was successfully scheduled.
      */
-    public final boolean schedule(AbstractSchedulable item) {
+    public boolean schedule(AbstractSchedulable item) {
 	if (scheduled.contains(item)) {
 	    return false;
 	}
@@ -151,6 +155,12 @@ Comparator<AbstractSchedulable> {
     // ===== overriding methods =====
 
     @Override
-    public abstract String toString();
+    public String toString() {
+	return "AbstractActivity ["
+		+ (category != null ? "category=" + category + ", " : "")
+		+ (identifier != null ? "identifier=" + identifier + ", " : "")
+		+ "currentSize=" + currentSize + ", capacity=" + capacity
+		+ ", " + (location != null ? "location=" + location : "") + "]";
+    }
 
 }

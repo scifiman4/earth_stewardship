@@ -15,7 +15,7 @@ public abstract class AbstractSchedulable {
     // ===== fields =====
 
     /**
-     * the amount of space this object uses up in an {@link AbstractActivity}.
+     * the amount of space this object uses up in an {@link Activity}.
      */
     protected int size;
     /**
@@ -31,7 +31,7 @@ public abstract class AbstractSchedulable {
 
     /**
      * how much space this {@code AbstractSchedulable} takes up in an
-     * {@link AbstractActivity}.<br>
+     * {@link Activity}.<br>
      * <br>
      * Examples:
      * <ul>

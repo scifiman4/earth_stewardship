@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * An {@code AbstractActivity} is an activity that an
+ * An {@code Activity} is an activity that an
  * {@link AbstractSchedulable} can do.<br>
  * <br>
  * Examples:
@@ -14,7 +14,7 @@ import java.util.List;
  * <li>Earth Stewardship Day Session</li>
  * </ul>
  */
-public class AbstractActivity {
+public class Activity {
 
     // ===== fields =====
 
@@ -23,7 +23,7 @@ public class AbstractActivity {
      */
     protected String identifier;
     /**
-     * a way to group {@code AbstractActivity}s.
+     * a way to group {@code Activity}s.
      */
     protected String category;
     /**
@@ -31,7 +31,7 @@ public class AbstractActivity {
      */
     protected int capacity;
     /**
-     * the location of this {@code AbstractActivity}
+     * the location of this {@code Activity}
      */
     protected String location;
     /**
@@ -46,7 +46,7 @@ public class AbstractActivity {
 
     // ===== accessor methods =====
 
-    public AbstractActivity() {
+    public Activity() {
 	scheduled = new LinkedList<AbstractSchedulable>();
     }
 
@@ -79,7 +79,7 @@ public class AbstractActivity {
     }
 
     /**
-     * @return the current size of this {@code AbstractActivity}
+     * @return the current size of this {@code Activity}
      */
     public int getCurrentSize() {
 	return currentSize;
@@ -156,7 +156,7 @@ public class AbstractActivity {
 
     @Override
     public String toString() {
-	return "AbstractActivity ["
+	return "Activity ["
 		+ (category != null ? "category=" + category + ", " : "")
 		+ (identifier != null ? "identifier=" + identifier + ", " : "")
 		+ "currentSize=" + currentSize + ", capacity=" + capacity

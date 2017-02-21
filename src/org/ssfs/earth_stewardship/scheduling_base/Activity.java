@@ -4,8 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * An {@code Activity} is an activity that an
- * {@link AbstractSchedulable} can do.<br>
+ * An {@code Activity} is an activity that an {@link AbstractSchedulable} can
+ * do.<br>
  * <br>
  * Examples:
  * <ul>
@@ -42,7 +42,7 @@ public class Activity {
     /**
      * the {@link AbstractSchedulable}s doing this activity.
      */
-    protected List<AbstractSchedulable> scheduled; // TODO do i need this??
+    protected List<AbstractSchedulable> scheduled; // TODO do I need this??
 
     // ===== accessor methods =====
 

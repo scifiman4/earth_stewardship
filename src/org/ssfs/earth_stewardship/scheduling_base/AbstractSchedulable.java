@@ -21,7 +21,7 @@ public abstract class AbstractSchedulable {
     /**
      * the schedule for this {@code AbstractSchedulable}.
      */
-    protected AbstractSchedule mySchedule;
+    protected Schedule mySchedule;
     /**
      * This is used to identify this {@code AbstractSchedulable} from others.
      */
@@ -50,12 +50,12 @@ public abstract class AbstractSchedulable {
     }
 
     /**
-     * retrieves the associated {@link AbstractSchedule} for this
+     * retrieves the associated {@link Schedule} for this
      * {@code AbstractSchedulable}
      *
-     * @return the {@link AbstractSchedule} associated with the object.
+     * @return the {@link Schedule} associated with the object.
      */
-    public AbstractSchedule getSchedule() {
+    public Schedule getSchedule() {
 	return mySchedule;
     }
 

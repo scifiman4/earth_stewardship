@@ -6,14 +6,14 @@ import java.util.Map;
 /**
  * This is the schedule for an {@link AbstractSchedulable}.
  */
-public class AbstractSchedule {
+public class Schedule {
 
     /**
      * Maps a {@link Block} to an {@link Activity}.
      */
     protected Map<Block, Activity> schedule;
 
-    public AbstractSchedule() {
+    public Schedule() {
 	schedule = new HashMap<Block, Activity>();
     }
 

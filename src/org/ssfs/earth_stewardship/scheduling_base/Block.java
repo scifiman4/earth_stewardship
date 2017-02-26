@@ -61,4 +61,10 @@ public class Block {
 	return true;
     }
 
+    @Override
+    public String toString() {
+	return "Block [blockId=" + blockId + ", "
+		+ (identifier != null ? "identifier=" + identifier : "") + "]";
+    }
+
 }

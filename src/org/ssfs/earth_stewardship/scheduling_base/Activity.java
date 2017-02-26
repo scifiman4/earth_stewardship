@@ -44,11 +44,11 @@ public class Activity {
      */
     protected List<AbstractSchedulable> scheduled; // TODO do I need this??
 
-    // ===== accessor methods =====
-
     public Activity() {
 	scheduled = new LinkedList<AbstractSchedulable>();
     }
+
+    // ===== accessor methods =====
 
     /**
      * @return the identifier
@@ -159,8 +159,8 @@ public class Activity {
 	return "Activity ["
 		+ (category != null ? "category=" + category + ", " : "")
 		+ (identifier != null ? "identifier=" + identifier + ", " : "")
-		+ "currentSize=" + currentSize + ", capacity=" + capacity
-		+ ", " + (location != null ? "location=" + location : "") + "]";
+		+ "size=" + currentSize + "/" + capacity + ", "
+		+ (location != null ? "location=" + location : "") + "]";
     }
 
 }

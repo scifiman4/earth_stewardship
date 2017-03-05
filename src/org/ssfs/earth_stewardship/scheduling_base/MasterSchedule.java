@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This is the schedule for an {@link AbstractSchedulable}.
+ * Defines the Master Schedule.
  */
-public class Schedule {
+public class MasterSchedule {
 
     // ===== fields =====
 
@@ -17,7 +17,7 @@ public class Schedule {
 
     // ===== constructor =====
 
-    public Schedule() {
+    public MasterSchedule() {
 	schedule = new HashMap<Block, Activity>();
     }
 

@@ -1,5 +1,8 @@
 package org.ssfs.earth_stewardship.scheduling_base;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A {@code AbstractSchedulable} is an item that can be scheduled.<br>
  * <br>
@@ -21,11 +24,15 @@ public abstract class AbstractSchedulable {
     /**
      * the schedule for this {@code AbstractSchedulable}.
      */
-    protected Schedule mySchedule;
+    protected List<Activity> mySchedule;
     /**
      * This is used to identify this {@code AbstractSchedulable} from others.
      */
     protected String identifier;
+
+    public AbstractSchedulable() {
+	mySchedule = new ArrayList<Activity>();
+    }
 
     // ===== accessor methods =====
 
@@ -55,7 +62,7 @@ public abstract class AbstractSchedulable {
      *
      * @return the {@link Schedule} associated with the object.
      */
-    public Schedule getSchedule() {
+    public List<Activity> getSchedule() {
 	return mySchedule;
     }
 

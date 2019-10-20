@@ -4,15 +4,28 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * <h2>Description</h2>
+ * <p>
  * An {@code Activity} is an activity that an {@link AbstractSchedulable} can
- * do.<br>
- * <br>
- * Examples:
+ * do.
+ * <h3>Examples:</h3>
  * <ul>
  * <li>Class Section</li>
  * <li>Dining Table</li>
  * <li>Earth Stewardship Day Session</li>
  * </ul>
+ * {@code Activity}s are scheduled into {@link Block}s. An {@code Activity} can
+ * occur in multiple {@code Block}s, but TODO one {@code Block} cannot have
+ * multiple of the same {@code Activity}.
+ * <h3>A note on "sameness"</h3> The following criteria determines if one
+ * {@code Activity} is the same as another:
+ * <ul>
+ * <li>{@link Activity#identifier identifier} - the description of the
+ * {@code Activity}</li>
+ * <li>{@link Activity#category category} - an optional category for the
+ * {@code Activity}</li>
+ * </ul>
+ * </p>
  */
 public class Activity {
 
@@ -23,7 +36,7 @@ public class Activity {
      */
     protected String identifier;
     /**
-     * a way to group {@code Activity}s.
+     * a way to group {@code Activity}s (optional).
      */
     protected String category;
     /**
